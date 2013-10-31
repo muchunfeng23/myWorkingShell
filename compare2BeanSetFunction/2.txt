@@ -1,0 +1,111 @@
+﻿
+		OrderBaseVo orderBaseVo = new OrderBaseVo();
+		orderBaseVo.setIsPostageFree(1);
+//		orderBaseVo.setOrderSourceNo(OrderSourceConstant.YG_SJYGSSSC_Android.getNo());
+		orderBaseVo.setOrderSourceNo("YG-SJZFBQB-SJZFBQB");
+		orderBaseVo.setShouldPostage(15d);
+		orderBaseVo.setChannelNo("channelNo");
+		orderBaseVo.setOrderTotalAmount(829.0);
+		orderBaseVo.setTotalGivingScores(419);
+		orderBaseVo.setUnionOrderFlag("0");
+		orderBaseVo.setDeliveryDate(DeliveryDate.WORKDAY_DELIVERY.toString());
+		orderBaseVo.setOutShopName("android");
+		orderBaseVo.setPayment(Payment.ONLINE_PAYMENT.toString());
+//		orderBaseVo.setOutShopName(OrderSourceConstant.YG_SJYGSSSC_Android.getName());
+		orderBaseVo.setOrderNoPrefix("A");
+		orderBaseVo.setDeliveryWay("1");
+		orderBaseVo.setActualPostage(0d);
+		orderBaseVo.setOrderFlag(1);
+		orderBaseVo.setFxName("hellofenxiao");
+//		//天猫
+//		orderBaseVo.setIsFromPreSale(1);
+//		orderBaseVo.setFrontPayment(135.0);
+//		Date date = new Date(System.currentTimeMillis());
+//		System.out.println(date);
+//		orderBaseVo.setFrontPayDate(date);
+//		orderBaseVo.setBalanceDuePayment(180.0);
+//		orderBaseVo.setBalanceDueDate(date);
+//		orderBaseVo.setOutOrderId("tianmaopresale9999");
+//		orderBaseVo.setPreSaleStatus(OrderConstant.PAY_PAID);
+		
+		OrderBuyInfoVo orderBuyInfoVo = new OrderBuyInfoVo();
+		orderBuyInfoVo.setEmail("yang.l2@yougou.com");
+		orderBuyInfoVo.setLoginaccountId("a11c93979f7246a1a63ac820d9534827");
+		orderBuyInfoVo.setMemberName("13620902790");
+		orderBuyInfoVo.setMemberShip("G");
+		orderBaseVo.setOrderBuyInfoVo(orderBuyInfoVo);
+		
+		OrderConsigneeVo orderConsigneeVo = new OrderConsigneeVo();
+		orderConsigneeVo.setReceiverAddress("1219");
+		orderConsigneeVo.setReceiverName("胡贤琳测试");
+		orderConsigneeVo.setReceiverMobile("13728685016");
+		orderConsigneeVo.setReceiverProvince("root-20");
+		orderConsigneeVo.setReceiverCity("root-20-4");
+		orderConsigneeVo.setReceiverArea("root-20-4-1");
+		orderConsigneeVo.setReceiverZipCode("100000");
+		orderBaseVo.setOrderConsigneeVo(orderConsigneeVo);
+		
+		List<CouponUseVo> couponUseVoList = new ArrayList<CouponUseVo>();
+		CouponUseVo couponUseVo = new CouponUseVo();
+		couponUseVo.setCouponId("2d9d2a3de6f211e1a7c8d510d0e3015a");
+		couponUseVo.setCouponSignNumber("2ba47ce67cb9a21c2393b3aee0492137");
+		couponUseVo.setUseAmount(0d);
+		couponUseVoList.add(couponUseVo);
+		
+		Map<String, Double> prefAmount0 = new HashMap<String, Double>();
+		prefAmount0.put(OrderPrefConstants.COUPON_PREF_AMOUNT, 9d);
+		prefAmount0.put(OrderPrefConstants.COUPON_PREF_AMOUNT5, 0d);
+		prefAmount0.put(OrderPrefConstants.PAYMENT_PREF_AMOUNT, 3d);
+		orderBaseVo.setPrefAmount(prefAmount0);
+		
+		List<ProductColumnVo> productColumnList = new ArrayList<ProductColumnVo>();
+		ProductColumnVo productColumnVo1 = new ProductColumnVo();
+		productColumnVo1.setProdNo("21000124004");
+		productColumnVo1.setActiveId("2c9481313242c6a8013242ca9a610067");
+		productColumnVo1.setActiveType((short)0);
+		productColumnVo1.setActivePrice(148d);
+		productColumnVo1.setProdType("0");
+		productColumnVo1.setPostageCost(10d);
+		productColumnVo1.setCommodityId("2c9481bc30ca64510130ca8b5cbb16a8");
+		productColumnVo1.setCommodityNo("21000124");
+		productColumnVo1.setCommodityNum(2);
+		productColumnVo1.setCommoditySpecificationStr("蓝色,F");
+		productColumnVo1.setCommodityImage("http://i2.ygimg.cn/pics/civicloves/2012/99828766/99828766_01_t.jpg");
+		productColumnVo1.setCommodityWeight(0d);
+		productColumnVo1.setCommodityType(0);
+		productColumnVo1.setMerchantCode("SP20110626723156");
+		productColumnVo1.setOrderDistributionSide(0);
+		productColumnVo1.setProdName("LI-NING 李宁 2012年新款女子套头无帽卫衣 AWDG826");
+		productColumnVo1.setProdTotalAmt(296d);
+		productColumnVo1.setActiveName("");
+		productColumnVo1.setSalePrice(890d);
+		productColumnVo1.setProdUnitPrice(148d);
+		productColumnVo1.setProductStatus(1);
+		productColumnVo1.setGiftInfo("");
+		productColumnVo1.setSiteNo("ol");
+		
+		Map<String, Double> prefAmount1 = new HashMap<String, Double>();
+		prefAmount1.put(OrderPrefConstants.COUPON_PREF_AMOUNT, 0d);
+		prefAmount1.put(OrderPrefConstants.COUPON_PREF_AMOUNT5, 0d);
+		prefAmount1.put(OrderPrefConstants.PROD_DISCOUNT_AMOUNT, 0d);
+		prefAmount1.put(OrderPrefConstants.PAYMENT_PREF_AMOUNT, 0d);
+		prefAmount1.put(OrderPrefConstants.BUY_REDUCTION_PREF_AMOUNT, 0d);
+		prefAmount1.put(OrderPrefConstants.GLOBLE_PREF_AMOUNT, 0d);
+		prefAmount1.put(OrderPrefConstants.ACTIVE_PREF_AMOUNT, 0d);
+		prefAmount1.put(OrderPrefConstants.MEMBER_PREF_AMOUNT, 0d);
+		prefAmount1.put(OrderPrefConstants.TEMP_SALE_AMOUNT, 296d);
+		productColumnVo1.setPrefAmount(prefAmount1);
+		productColumnList.add(productColumnVo1);
+		orderBaseVo.setProductColumnList(productColumnList);
+		
+		OrderTrafficVo orderTrafficVo = new OrderTrafficVo();
+		orderTrafficVo.setUtmAid("191215617");
+		orderTrafficVo.setUtmSource("WM_kHERLDjVP");
+		orderTrafficVo.setYgMedium("(not%20set)");
+		orderTrafficVo.setSourceVisitDate(new Date());
+		orderBaseVo.setOrderTrafficVo(orderTrafficVo);
+		
+		OrderMain orderMain = orderApi.splitAndCreateOrder(orderBaseVo);
+		System.out.println("=========="+orderMain.getOrderMainNo());
+	
+	

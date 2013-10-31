@@ -1,0 +1,2 @@
+两个OrderBaseVo进行比较，比较set方法看有无丢落
+因为两个bean的方法比较多，所以决定用shell来比较

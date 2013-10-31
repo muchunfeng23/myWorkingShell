@@ -1,0 +1,53 @@
+﻿OrderBaseVo baseVo = new OrderBaseVo();
+		baseVo.setIsWLB(orderBaseVo.getIsWLB());
+		baseVo.setOrderSourceNo(orderBaseVo.getOrderSourceId());
+		baseVo.setOutShopName(orderBaseVo.getOutShopName());
+		baseVo.setUnionOrderFlag(orderBaseVo.getUnionOrderFlag());
+		baseVo.setIsPostageFree(orderBaseVo.isExemptFreight());
+		baseVo.setShouldPostage(orderBaseVo.getFreightAmount());// 应付运费
+		baseVo.setActualPostage(orderBaseVo.getFreightAmount());// 实付运费
+		baseVo.setPrefAmount(prefAmount.size() > 0 ? prefAmount : null);//优惠金额
+		prefAmount.put(OrderPrefConstants.COUPON_PREF_AMOUNT,0d);// 优惠券优惠金额
+		  prefAmount.put(OrderPrefConstants.COUPON_PREF_AMOUNT5, 0d);// 礼品券优惠金额(目前不支持使用礼品券，所以优惠金额为0)
+		  prefAmount.put(OrderPrefConstants.PAYMENT_PREF_AMOUNT, 0d);// 在线打折优惠金额
+		  prefAmount.put(OrderPrefConstants.MEMBER_PREF_AMOUNT,null);// 会员折扣优惠金额
+		  prefAmount.put(OrderPrefConstants.PROD_DISCOUNT_AMOUNT,null);// 商品优惠总价
+		》
+		baseVo.setPayment(orderBaseVo.getPayment());
+		baseVo.setIsWLB(orderBaseVo.getIsWLB());
+		baseVo.setPayAmount(orderBaseVo.getBuyAmount());// 应付金额
+		baseVo.setOrderMessage(orderBaseVo.getOrderMessage());
+		baseVo.setClientIp(orderBaseVo.getClientIp());
+		baseVo.setDeliveryWay(orderBaseVo.getDeliveryWay());// 设置快递方式
+		baseVo.setDeliveryDate(WORKDAY_DELIVERY);
+		baseVo.setProductColumnList(convertProductColumnVo(orderBaseVo.getProductColumnList()));// 货品明细
+		《
+		vo.setCommodityId(productColumnVo.getCommodityId());
+		vo.setCommodityNo(productColumnVo.getCommodityNo());
+		vo.setCommoditySpecificationStr(productColumnVo.getCommoditySpec());
+		vo.setCommodityWeight(productColumnVo.getCommodityWeight());
+		vo.setCommodityNum(productColumnVo.getProductNum());
+		vo.setCommodityImage(productColumnVo.getCommodityPicture());
+		vo.setCommodityType(productColumnVo.getProductType());
+		vo.setShouldPostage(productColumnVo.getPostageCost());
+		vo.setPostageCost(productColumnVo.getPostageCost());
+		vo.setProdNo(productColumnVo.getProductNo());
+		vo.setProdName(productColumnVo.getCommodityName());// 商品名称 是商品表查出来的标准商品名
+		vo.setCommodityName(productColumnVo.getCommodityName());// 商品名称 带颜色尺码 是第三方订单接入组传的参数
+		vo.setProdType( productColumnVo.getThirdCategoriesNo());// 商品分类
+		vo.setLevelCode(productColumnVo.getThirdPartyCode());// 第三方货品条码 有争议是 productColumnVo.getThirdPartyCode() 还是productColumnVo.getLevelCode()
+		vo.setProdUnitPrice(productColumnVo.getProductPrice());
+		vo.setActivePrice(productColumnVo.getActivePrice());
+		vo.setProdTotalAmt(CalculateUtils.mul(productColumnVo.getActivePrice(), productColumnVo.getProductNum()));// 商品结算价 小计
+		  prefAmount.put(OrderPrefConstants.TEMP_SALE_AMOUNT, null);
+		  prefAmount.put(OrderPrefConstants.ACTIVE_PREF_AMOUNT, null);
+		  prefAmount.put(OrderPrefConstants.MEMBER_PREF_AMOUNT, null);
+		  prefAmount.put(OrderPrefConstants.COUPON_PREF_AMOUNT, null);
+		  prefAmount.put(OrderPrefConstants.PROD_DISCOUNT_AMOUNT, null);
+		vo.setPrefAmount(prefAmount);// 设置金额
+		vo.setIntegralPrefAmount(productColumnVo.getIntegralPrefAmount());
+		vo.setPayAmountByCost(vo.getProdTotalAmt());// 成本价分摊金额
+		》
+		baseVo.setOutOrderId(orderBaseVo.getOutOrderId());// 外部订单号
+		baseVo.setCreateDate(orderBaseVo.getCreateTime());// 下单时间
+		baseVo.setWarehouseCodeList(new ArrayList<String>());
